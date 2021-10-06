@@ -6,95 +6,95 @@
 // namespace BestRestaurants.Tests
 // {
 //   [TestClass]
-//   public class CategoryTests : IDisposable
+//   public class CuisinesTests : IDisposable
 //   {
 
 //     public void Dispose()
 //     {
-//       Category.ClearAll();
+//       Cuisines.ClearAll();
 //     }
 
 //     [TestMethod]
-//     public void CategoryConstructor_CreatesInstanceOfCategory_Category()
+//     public void CuisinesConstructor_CreatesInstanceOfCuisines_Cuisines()
 //     {
-//       Category newCategory = new Category("test category");
-//       Assert.AreEqual(typeof(Category), newCategory.GetType());
+//       Cuisines newCuisines = new Cuisines("test Cuisines");
+//       Assert.AreEqual(typeof(Cuisines), newCuisines.GetType());
 //     }
 
 //     [TestMethod]
 //     public void GetName_ReturnsName_String()
 //     {
 //       //Arrange
-//       string name = "Test Category";
-//       Category newCategory = new Category(name);
+//       string name = "Test Cuisines";
+//       Cuisines newCuisines = new Cuisines(name);
 
 //       //Act
-//       string result = newCategory.Name;
+//       string result = newCuisines.Name;
 
 //       //Assert
 //       Assert.AreEqual(name, result);
 //     }
 
 //     [TestMethod]
-//     public void GetId_ReturnsCategoryId_Int()
+//     public void GetId_ReturnsCuisinesId_Int()
 //     {
 //       //Arrange
-//       string name = "Test Category";
-//       Category newCategory = new Category(name);
+//       string name = "Test Cuisines";
+//       Cuisines newCuisines = new Cuisines(name);
 
 //       //Act
-//       int result = newCategory.Id;
+//       int result = newCuisines.Id;
 
 //       //Assert
 //       Assert.AreEqual(1, result);
 //     }
 
 //     [TestMethod]
-//     public void GetAll_ReturnsAllCategoryObjects_CategoryList()
+//     public void GetAll_ReturnsAllCuisinesObjects_CuisinesList()
 //     {
 //       //Arrange
 //       string name01 = "Work";
 //       string name02 = "School";
-//       Category newCategory1 = new Category(name01);
-//       Category newCategory2 = new Category(name02);
-//       List<Category> newList = new List<Category> { newCategory1, newCategory2 };
+//       Cuisines newCuisines1 = new Cuisines(name01);
+//       Cuisines newCuisines2 = new Cuisines(name02);
+//       List<Cuisines> newList = new List<Cuisines> { newCuisines1, newCuisines2 };
 
 //       //Act
-//       List<Category> result = Category.GetAll();
+//       List<Cuisines> result = Cuisines.GetAll();
 
 //       //Assert
 //       CollectionAssert.AreEqual(newList, result);
 //     }
 
 //     [TestMethod]
-//     public void Find_ReturnsCorrectCategory_Category()
+//     public void Find_ReturnsCorrectCuisines_Cuisines()
 //     {
 //       //Arrange
 //       string name01 = "Work";
 //       string name02 = "School";
-//       Category newCategory1 = new Category(name01);
-//       Category newCategory2 = new Category(name02);
+//       Cuisines newCuisines1 = new Cuisines(name01);
+//       Cuisines newCuisines2 = new Cuisines(name02);
 
 //       //Act
-//       Category result = Category.Find(2);
+//       Cuisines result = Cuisines.Find(2);
 
 //       //Assert
-//       Assert.AreEqual(newCategory2, result);
+//       Assert.AreEqual(newCuisines2, result);
 //     }
 
 //     [TestMethod]
-//     public void AddItem_AssociatesItemWithCategory_ItemList()
+//     public void AddRestaurant_AssociatesRestaurantWithCuisines_RestaurantList()
 //     {
 //       //Arrange
 //       string description = "Walk the dog.";
-//       Item newItem = new Item(description);
-//       List<Item> newList = new List<Item> { newItem };
+//       Restaurant newRestaurant = new Restaurant(description);
+//       List<Restaurant> newList = new List<Restaurant> { newRestaurant };
 //       string name = "Work";
-//       Category newCategory = new Category(name);
-//       newCategory.AddItem(newItem);
+//       Cuisines newCuisines = new Cuisines(name);
+//       newCuisines.AddRestaurant(newRestaurant);
 
 //       //Act
-//       List<Item> result = newCategory.Items;
+//       List<Restaurant> result = newCuisines.Restaurants;
 
 //       //Assert
 //       CollectionAssert.AreEqual(newList, result);

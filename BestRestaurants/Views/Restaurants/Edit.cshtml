@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model BestRestaurants.Models.Item
+@model BestRestaurants.Models.Restaurant
 
 <h2>Edit</h2>
 
@@ -10,13 +10,13 @@
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.ItemId)
+  @Html.HiddenFor(model => model.RestaurantId)
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
 
-  @Html.LabelFor(model => model.Category)
-  @Html.DropDownList("CategoryId")
+  @Html.LabelFor(model => model.Cuisines)
+  @Html.DropDownList("CuisinesId")
 
   <input type="submit" value="Save" />
 }

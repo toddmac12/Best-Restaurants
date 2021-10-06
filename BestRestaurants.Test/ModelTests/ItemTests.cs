@@ -8,23 +8,23 @@
 // {
 
 //   [TestClass]
-//   public class ItemTests : IDisposable
+//   public class RestaurantTests : IDisposable
 //   {
 
 //     public void Dispose()
 //     {
-//       Item.ClearAll();
+//       Restaurant.ClearAll();
 //     }
-//     public void ItemTest()
+//     public void RestaurantTest()
 //     {
 //       DBConfiguration.ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=Best_Restaurants_test;";
 //     }
 
 //     [TestMethod]
-//     public void ItemConstructor_CreatesInstanceOfItem_Item()
+//     public void RestaurantConstructor_CreatesInstanceOfRestaurant_Restaurant()
 //     {
-//       Item newItem = new Item("test");
-//       Assert.AreEqual(typeof(Item), newItem.GetType());
+//       Restaurant newRestaurant = new Restaurant("test");
+//       Assert.AreEqual(typeof(Restaurant), newRestaurant.GetType());
 //     }
 
 //     [TestMethod]
@@ -34,8 +34,8 @@
 //       string description = "Walk the dog.";
 
 //       //Act
-//       Item newItem = new Item(description);
-//       string result = newItem.Description;
+//       Restaurant newRestaurant = new Restaurant(description);
+//       string result = newRestaurant.Description;
 
 //       //Assert
 //       Assert.AreEqual(description, result);
@@ -46,88 +46,88 @@
 //     {
 //       //Arrange
 //       string description = "Walk the dog.";
-//       Item newItem = new Item(description);
+//       Restaurant newRestaurant = new Restaurant(description);
 
 //       //Act
 //       string updatedDescription = "Do the dishes";
-//       newItem.Description = updatedDescription;
-//       string result = newItem.Description;
+//       newRestaurant.Description = updatedDescription;
+//       string result = newRestaurant.Description;
 
 //       //Assert
 //       Assert.AreEqual(updatedDescription, result);
 //     }
 
 //     [TestMethod]
-//     public void GetAll_ReturnsEmptyList_ItemList()
+//     public void GetAll_ReturnsEmptyList_RestaurantList()
 //     {
 //       // Arrange
-//       List<Item> newList = new List<Item> { };
+//       List<Restaurant> newList = new List<Restaurant> { };
 
 //       // Act
-//       List<Item> result = Item.GetAll();
+//       List<Restaurant> result = Restaurant.GetAll();
 
 //       // Assert
 //       CollectionAssert.AreEqual(newList, result);
 //     }
 
 //     [TestMethod]
-//     public void GetAll_ReturnsItems_ItemList()
+//     public void GetAll_ReturnsRestaurants_RestaurantList()
 //     {
 //       //Arrange
 //       string description01 = "Walk the dog";
 //       string description02 = "Wash the dishes";
-//       Item newItem1 = new Item(description01);
-//       newItem1.Save();
-//       Item newItem2 = new Item(description02);
-//       newItem2.Save();
-//       List<Item> newList = new List<Item> { newItem1, newItem2 };
+//       Restaurant newRestaurant1 = new Restaurant(description01);
+//       newRestaurant1.Save();
+//       Restaurant newRestaurant2 = new Restaurant(description02);
+//       newRestaurant2.Save();
+//       List<Restaurant> newList = new List<Restaurant> { newRestaurant1, newRestaurant2 };
 
 //       //Act
-//       List<Item> result = Item.GetAll();
+//       List<Restaurant> result = Restaurant.GetAll();
 
 //       //Assert
 //       CollectionAssert.AreEqual(newList, result);
 //     }
 
 //     [TestMethod]
-//     public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
+//     public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Restaurant()
 //     {
 //       // Arrange, Act
-//       Item firstItem = new Item("Mow the lawn");
-//       Item secondItem = new Item("Mow the lawn");
+//       Restaurant firstRestaurant = new Restaurant("Mow the lawn");
+//       Restaurant secondRestaurant = new Restaurant("Mow the lawn");
 
 //       // Assert
-//       Assert.AreEqual(firstItem, secondItem);
+//       Assert.AreEqual(firstRestaurant, secondRestaurant);
 //     }
 
 //     [TestMethod]
-//     public void Save_SavesToDatabase_ItemList()
+//     public void Save_SavesToDatabase_RestaurantList()
 //     {
 //       //Arrange
-//       Item testItem = new Item("Mow the lawn");
+//       Restaurant testRestaurant = new Restaurant("Mow the lawn");
 
 //       //Act
-//       testItem.Save();
-//       List<Item> result = Item.GetAll();
-//       List<Item> testList = new List<Item>{testItem};
+//       testRestaurant.Save();
+//       List<Restaurant> result = Restaurant.GetAll();
+//       List<Restaurant> testList = new List<Restaurant>{testRestaurant};
 
 //       //Assert
 //       CollectionAssert.AreEqual(testList, result);
 //     }
 
 //     [TestMethod]
-//     public void Find_ReturnsCorrectItemFromDatabase_Item()
+//     public void Find_ReturnsCorrectRestaurantFromDatabase_Restaurant()
 //     {
 //       //Arrange
-//       Item newItem = new Item("Mow the lawn");
-//       newItem.Save();
-//       Item newItem2 = new Item("Wash dishes");
-//       newItem2.Save();
+//       Restaurant newRestaurant = new Restaurant("Mow the lawn");
+//       newRestaurant.Save();
+//       Restaurant newRestaurant2 = new Restaurant("Wash dishes");
+//       newRestaurant2.Save();
 
 //       //Act
-//       Item foundItem = Item.Find(newItem.Id);
+//       Restaurant foundRestaurant = Restaurant.Find(newRestaurant.Id);
 //       //Assert
-//       Assert.AreEqual(newItem, foundItem);
+//       Assert.AreEqual(newRestaurant, foundRestaurant);
 //     }
 //   }
 // }
