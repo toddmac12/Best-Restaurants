@@ -71,5 +71,18 @@ namespace BestRestaurants.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Search(string description)
+    {
+      string searchDescription = description.ToLower();
+      List<Restaurant> searchResults = _db.Restaurants.Where(restaurant => restaurant.Description.ToLower().Contains(searchDescription)).ToList();
+      return View("Index", searchResults);
+    }
   }
 }
