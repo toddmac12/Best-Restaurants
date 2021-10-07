@@ -37,11 +37,13 @@ namespace BestRestaurants.Controllers
     public ActionResult Details(int id)
     {
       Cuisines thisCuisines = _db.Cuisines.FirstOrDefault(Cuisines => Cuisines.CuisinesId == id);
+       //Cuisines thisCuisines = _db.Cuisines.FirstOrDefault(Cuisines => Cuisines.CuisinesId == id);
       return View(thisCuisines);
     }
     public ActionResult Edit(int id)
     {
       var thisCuisines = _db.Cuisines.FirstOrDefault(Cuisines => Cuisines.CuisinesId == id);
+       //var thisCuisines = _db.Cuisines.FirstOrDefault(Cuisines => Cuisines.CuisinesId == id);
       return View(thisCuisines);
     }
 
